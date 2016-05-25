@@ -398,7 +398,7 @@
         source: function(request, response) {
           self.ajax('autocompleteRequester', request.term).done(function(data){
             response(_.map(data.users, function(user){
-              return {"label": user.email, "value": user.email};
+              return {"label": user.name + " - " + user.email, "value": user.email};
             }));
           });
         },
